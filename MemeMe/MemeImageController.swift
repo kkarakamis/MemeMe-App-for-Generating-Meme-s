@@ -10,15 +10,19 @@ import UIKit
 
 class MemeImageControl: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
-    var image: UIImage!
+    var image: UIImage = UIImage()
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.allowsEditing = true
         if let img = info[.originalImage] {
-            self.image = (img as! UIImage)
+            image = (img as! UIImage)
         }
         //self.imageView.contentMode = .scaleAspectFit
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func getImage() -> UIImage{
+        return image
     }
 
 }

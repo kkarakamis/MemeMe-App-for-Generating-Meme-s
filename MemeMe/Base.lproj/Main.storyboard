@@ -19,12 +19,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3Q-KE-wzK">
                                 <rect key="frame" x="0.0" y="840" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Album" id="qRR-RA-Mik">
+                                    <barButtonItem title="Album" id="qRR-RA-Mik" userLabel="albumButton">
                                         <connections>
                                             <action selector="selectAnImage:" destination="BYZ-38-t0r" id="SsC-UN-snK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="6Rb-IJ-0IC">
+                                    <barButtonItem tag="1" title="Camera" id="6Rb-IJ-0IC" userLabel="cameraButton">
                                         <connections>
                                             <action selector="selectAnImageFromCamera:" destination="BYZ-38-t0r" id="j3T-wp-t2a"/>
                                         </connections>
