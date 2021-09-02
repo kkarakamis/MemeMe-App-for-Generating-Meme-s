@@ -13,6 +13,7 @@
 		3AD494E926E0E61B0038A530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD494E726E0E61B0038A530 /* Main.storyboard */; };
 		3AD494EB26E0E61C0038A530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD494EA26E0E61C0038A530 /* Assets.xcassets */; };
 		3AD494EE26E0E61C0038A530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD494EC26E0E61C0038A530 /* LaunchScreen.storyboard */; };
+		3AD494F626E0E7910038A530 /* MemeImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD494F526E0E7910038A530 /* MemeImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3AD494EA26E0E61C0038A530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD494ED26E0E61C0038A530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD494EF26E0E61C0038A530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AD494F526E0E7910038A530 /* MemeImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3AD494EA26E0E61C0038A530 /* Assets.xcassets */,
 				3AD494EC26E0E61C0038A530 /* LaunchScreen.storyboard */,
 				3AD494EF26E0E61C0038A530 /* Info.plist */,
+				3AD494F526E0E7910038A530 /* MemeImageController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				3AD494E626E0E61B0038A530 /* ViewController.swift in Sources */,
 				3AD494E226E0E61B0038A530 /* AppDelegate.swift in Sources */,
 				3AD494E426E0E61B0038A530 /* SceneDelegate.swift in Sources */,
+				3AD494F626E0E7910038A530 /* MemeImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
