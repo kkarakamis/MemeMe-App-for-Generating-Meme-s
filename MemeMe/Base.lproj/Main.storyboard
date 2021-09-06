@@ -26,7 +26,7 @@
                                     </barButtonItem>
                                     <barButtonItem tag="1" title="Camera" id="6Rb-IJ-0IC" userLabel="cameraButton">
                                         <connections>
-                                            <action selector="selectAnImageFromCamera:" destination="BYZ-38-t0r" id="j3T-wp-t2a"/>
+                                            <action selector="selectAnImage:" destination="BYZ-38-t0r" id="Qhi-bD-OsZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -38,23 +38,39 @@
                                     <constraint firstAttribute="width" constant="374" id="g0n-Wc-Q5N"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRQ-6B-zW7" userLabel="Top Text">
+                                <rect key="frame" x="179" y="266" width="56" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bn-1R-3Yq">
+                                <rect key="frame" x="163" y="606" width="88" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fe1-Qz-G6I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3QZ-YZ-qkq"/>
+                            <constraint firstItem="1bn-1R-3Yq" firstAttribute="centerX" secondItem="fe1-Qz-G6I" secondAttribute="centerX" id="41B-N9-d5r"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="bottom" constant="200" id="6tU-m9-IFP"/>
                             <constraint firstAttribute="bottom" secondItem="z3Q-KE-wzK" secondAttribute="bottom" constant="12" id="DSc-EN-HIq"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="796" id="H3H-yV-U6y"/>
+                            <constraint firstItem="tRQ-6B-zW7" firstAttribute="centerX" secondItem="fe1-Qz-G6I" secondAttribute="centerX" id="HYs-bX-jR7"/>
+                            <constraint firstItem="tRQ-6B-zW7" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="top" id="R4a-fN-tke"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bbz-xz-feW"/>
+                            <constraint firstItem="1bn-1R-3Yq" firstAttribute="bottom" secondItem="fe1-Qz-G6I" secondAttribute="bottom" id="cII-fH-N25"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="bottom" constant="200" id="dob-tO-Q8E"/>
                             <constraint firstItem="fe1-Qz-G6I" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gsi-Y0-VM6"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ixK-25-REw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="1bn-1R-3Yq" id="pO0-bo-Iie"/>
                         <outlet property="cameraButton" destination="6Rb-IJ-0IC" id="ToH-XL-u6P"/>
                         <outlet property="imageView" destination="fe1-Qz-G6I" id="xji-HB-3vm"/>
+                        <outlet property="topText" destination="tRQ-6B-zW7" id="kcm-X3-PYU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
