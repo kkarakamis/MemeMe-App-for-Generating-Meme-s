@@ -14,8 +14,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+
     
     var textDelegate = MemeTextDelegate()
+    var meme: Meme!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor:  UIColor.black/* TODO: fill in appropriate UIColor */,
@@ -24,19 +27,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeWidth:  7.0/* TODO: fill in appropriate Float */
     ]
     
+    func setTextAttributes(textField:UITextField){
+        textField.textAlignment = .center
+        textField.delegate = textDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        topText.textAlignment = .center
-        bottomText.textAlignment = .center
-        topText.delegate = textDelegate
-        bottomText.delegate = textDelegate
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
+        setTextAttributes(textField: topText)
+        setTextAttributes(textField: bottomText)
+        shareButton.isEnabled = false
+        
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
@@ -81,6 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.imageView.image = (img as! UIImage)
         }
         self.imageView.contentMode = .scaleAspectFit
+        shareButton.isEnabled = true
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -92,5 +100,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(selectImageController, animated: true, completion: nil)
     }
     
+    func save() {
+            // Create the meme
+        meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+    }
+    
+    func generateMemedImage() -> UIImage {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setToolbarHidden(true, animated: false)
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setToolbarHidden(false, animated: false)
+
+    
+        return memedImage
+    }
+    
+    @IBAction func shareImage(_ sender: Any) {
+        save()
+        let controller = UIActivityViewController(activityItems: [meme.memedImage!], applicationActivities: nil)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
 }
 
+
+struct Meme {
+    var topText: String!
+    var bottomText: String!
+    var originalImage: UIImage!
+    var memedImage: UIImage!
+}
