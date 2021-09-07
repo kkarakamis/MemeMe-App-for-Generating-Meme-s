@@ -51,11 +51,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EU4-9L-VKw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU4-9L-VKw">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QBQ-5s-mor"/>
+                                </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="3Qv-Lb-014">
+                                    <navigationItem title="Title" id="3Qv-Lb-014" userLabel="MemeMe">
                                         <barButtonItem key="leftBarButtonItem" title="Share" id="0Rf-v0-3Aj">
                                             <connections>
                                                 <action selector="shareImage:" destination="BYZ-38-t0r" id="F1u-GA-rk5"/>
@@ -71,22 +73,27 @@
                             <constraint firstItem="fe1-Qz-G6I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3QZ-YZ-qkq"/>
                             <constraint firstItem="1bn-1R-3Yq" firstAttribute="centerX" secondItem="fe1-Qz-G6I" secondAttribute="centerX" id="41B-N9-d5r"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="bottom" constant="200" id="6tU-m9-IFP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="EU4-9L-VKw" secondAttribute="top" constant="10" id="Clf-SX-EZg"/>
                             <constraint firstAttribute="bottom" secondItem="z3Q-KE-wzK" secondAttribute="bottom" constant="12" id="DSc-EN-HIq"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="796" id="H3H-yV-U6y"/>
                             <constraint firstItem="tRQ-6B-zW7" firstAttribute="centerX" secondItem="fe1-Qz-G6I" secondAttribute="centerX" id="HYs-bX-jR7"/>
                             <constraint firstItem="tRQ-6B-zW7" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="top" id="R4a-fN-tke"/>
+                            <constraint firstItem="EU4-9L-VKw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YSl-Vo-ZQo"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bbz-xz-feW"/>
                             <constraint firstItem="1bn-1R-3Yq" firstAttribute="bottom" secondItem="fe1-Qz-G6I" secondAttribute="bottom" id="cII-fH-N25"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="top" secondItem="fe1-Qz-G6I" secondAttribute="bottom" constant="200" id="dob-tO-Q8E"/>
                             <constraint firstItem="fe1-Qz-G6I" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gsi-Y0-VM6"/>
                             <constraint firstItem="z3Q-KE-wzK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ixK-25-REw"/>
+                            <constraint firstItem="EU4-9L-VKw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="krv-Pe-Dp6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="1bn-1R-3Yq" id="pO0-bo-Iie"/>
                         <outlet property="cameraButton" destination="6Rb-IJ-0IC" id="ToH-XL-u6P"/>
                         <outlet property="imageView" destination="fe1-Qz-G6I" id="xji-HB-3vm"/>
+                        <outlet property="navBar" destination="EU4-9L-VKw" id="Y5Q-bS-i0s"/>
                         <outlet property="shareButton" destination="0Rf-v0-3Aj" id="p8W-uo-zBJ"/>
+                        <outlet property="toolBar" destination="z3Q-KE-wzK" id="5wp-Lc-zi0"/>
                         <outlet property="topText" destination="tRQ-6B-zW7" id="kcm-X3-PYU"/>
                     </connections>
                 </viewController>

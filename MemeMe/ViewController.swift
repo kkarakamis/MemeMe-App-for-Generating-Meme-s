@@ -15,7 +15,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     
     var textDelegate = MemeTextDelegate()
     var meme: Meme!
@@ -106,17 +108,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.setToolbarHidden(true, animated: false)
+        //navigationController?.setNavigationBarHidden(true, animated: false)
+        //navigationController?.setToolbarHidden(true, animated: false)
 
+        toolBar.isHidden = true
+        navBar.isHidden = true
+        
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.setToolbarHidden(false, animated: false)
+//        navigationController?.setNavigationBarHidden(false, animated: false)
+//        navigationController?.setToolbarHidden(false, animated: false)
+        
+        toolBar.isHidden = false
+        navBar.isHidden = false
 
     
         return memedImage
